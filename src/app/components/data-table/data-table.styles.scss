@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+
+  tr {
+
+    th {
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+    }
+  }
+
+  .mat-column-select {
+    overflow: initial;
+  }
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

@@ -1,0 +1,33 @@
+#wrapper {
+  background: #fefefe;
+  min-height: 100%;
+  padding: 65px 0 0;
+
+  .main {
+    display: flex;
+    justify-content: center;
+
+    .inner {
+      width: 100%;
+      max-width: 1140px;
+      padding: 40px 0;
+    }
+  }
+
+  header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #303f9f;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.full-width {
+  width: 100%;
+}

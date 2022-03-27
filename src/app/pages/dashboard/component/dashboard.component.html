@@ -1,0 +1,34 @@
+<div class="container">
+  <!-- Title row -->
+  <div class="row">
+    <div class="col-6">
+      <h1>Dashboard</h1>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- Chart holder -->
+    <div *ngIf="!loading && rows.length" class="col-12">
+      <app-data-chart [selected]="selected"></app-data-chart>
+    </div>
+
+    <!-- Table holder -->
+    <div *ngIf="!loading && rows.length" class="col-12">
+      <app-data-table [source]="rows"
+                      [columns]="displayedColumns"
+                      [searchFields]="searchFields"
+                      [(selected)]="selected"></app-data-table>
+    </div>
+
+    <!-- No results -->
+    <div *ngIf="!loading && !rows.length" class="col-12">
+      <p class="text-center">No results!</p>
+    </div>
+
+    <!-- Loading row -->
+    <div *ngIf="loading" class="col-12">
+      <app-loader [loading]="true"></app-loader>
+    </div>
+  </div>
+</div>
