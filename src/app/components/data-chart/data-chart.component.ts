@@ -14,7 +14,7 @@ export class DataChartComponent implements OnInit, OnChanges {
 
   @Input() selected: DataModel[] = [];
 
-  private labelsArray = Array.from(Array(7000).keys());
+  private labelsArray = Array.from(Array(100).keys());
   public chart: any;
 
   private defaultItem = {
@@ -73,7 +73,7 @@ export class DataChartComponent implements OnInit, OnChanges {
               pinch: {
                 enabled: true
               },
-              mode: 'xy',
+              mode: 'x',
             },
           }
         }
@@ -96,6 +96,7 @@ export class DataChartComponent implements OnInit, OnChanges {
    */
   updateView() {
     let newData: any[] = [];
+    let maxVal = 0;
 
     if (this.selected.length) {
       this.selected.forEach((item: DataModel, i: number) => {
@@ -106,9 +107,17 @@ export class DataChartComponent implements OnInit, OnChanges {
           borderColor: this.utilsHelper.colors[colorIndex],
           backgroundColor: this.utilsHelper.colors[colorIndex],
         });
+
+        // Get max of item
+        if (item.data.length > maxVal) {
+          maxVal = item.data.length;
+        }
       });
     }
 
+    const labels = Array.from(Array(maxVal).keys())
+
+    this.chart.data.labels = labels;
     this.chart.data.datasets = [...newData];
     this.chart.update();
   }

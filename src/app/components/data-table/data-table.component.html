@@ -2,7 +2,7 @@
   <div class="col-12 text-right">
     <mat-form-field appearance="standard">
       <mat-label>Search</mat-label>
-      <input matInput (keyup)="search($event)" #input>
+      <input id="search-input" matInput (keyup)="search($event)" #input>
     </mat-form-field>
   </div>
 </div>
@@ -13,6 +13,7 @@
     mat-table
     [dataSource]="dataSource"
     matSort
+    id="data-table"
     class="mat-elevation-z8"
   >
   

@@ -6,7 +6,9 @@ import { UtilsHelper } from '@helpers/utils';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class DashboardService {
   public utilsHelper = new UtilsHelper();
   private dashboardApiUrl = 'api/dataset'; // URL to web api

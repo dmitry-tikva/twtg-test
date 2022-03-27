@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
     // Show loader
     this.loading = true;
 
-    this.customFilters.limit = 300;
+    this.customFilters.limit = 300; // To get all items without pagination
 
     // Get all with new filters
     this.dashboardService.getAll(this.customFilters).subscribe((res: {data: DataModel[], totRecords: number}) => {
